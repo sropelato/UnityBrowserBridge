@@ -1,0 +1,53 @@
+# Temporary files
+[Tt]emp/
+[Oo]bj/
+Packages/packages-lock.json
+
+# Local asset cache
+[Ll]ibrary/
+
+# Build files
+[Bb]uild/
+[Bb]uilds/
+
+# User settings
+UserSettings/*
+*.userprefs
+
+# Visual Studio files
+*.sln
+*.csproj
+*.csproj.user
+*.unityproj
+.vs
+.vsconfig
+
+# Rider files
+Assets/Plugins/Editor/JetBrains*
+.idea/**/contentModel.xml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/riderModule.iml
+
+# Visual Studio Code
+.vscode/
+
+# Log files
+log.txt
+Logs/*
+
+# Unity pidb meta files
+*.pidb.meta
+
+# Unity crash reports
+sysinfo.txt
+mono_crash.*
+
+# OS generated files
+.DS_Store
+._*
+Thumbs.db
+

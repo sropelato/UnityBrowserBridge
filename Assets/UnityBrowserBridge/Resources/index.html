@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unity Browser Bridge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <script src="unitybrowserbridge.js"></script>
+    <!-- HEAD_SCRIPTS -->
+</head>
+<body>
+
+<div id="content">
+    <div id="header">
+        <div id="header_logo"></div>
+        <div id="header_text">Unity Browser Bridge</div>
+    </div>
+    <div id="main">
+        <div id="status">
+            <div id="status_light" class="amber"></div>
+            <div id="status_text">loading</div>
+        </div>
+        <div id="scripts">
+            <div class="title">Loaded scripts</div>
+            <div id="script_list">
+                <!-- SCRIPT_LIST -->
+            </div>
+        </div>
+        <div id="calls">
+            <div id="browser_calls">
+                <div class="show_calls">
+                    <div class="title">Show live browser calls</div>
+                    <label class="switch">
+                        <input type="checkbox" id="live_browser_calls_checkbox"
+                               onchange="_ubb_changeLiveBrowserCalls()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div id="browser_calls_list">
+                </div>
+            </div>
+
+            <div id="unity_calls">
+                <div class="show_calls">
+                    <div class="title">Show live Unity calls</div>
+                    <label class="switch">
+                        <input type="checkbox" id="live_unity_calls_checkbox"
+                               onchange="_ubb_changeLiveUnityCalls()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div id="unity_calls_list">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
