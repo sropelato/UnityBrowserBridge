@@ -1,9 +1,11 @@
-getDateAndTime = function (prefix) {
-    return prefix + new Date().toLocaleString()
+// return string with formatted date and time
+getDateAndTime = function (locale) {
+	return new Date().toLocaleString(locale)
 }
 
-getDateAndTimeAsync = function (prefix) {
-    setTimeout(function () {
-        unityInstance.SendMessage('Main', 'SetDateAndTime', prefix + new Date().toLocaleString())
-    }, 1000)
+// get formatted date and time and invoke the 'SetDateAndTime' method on the 'Main' game object (after a delay of 1000ms)
+getDateAndTimeAsync = function (locale) {
+	setTimeout(function () {
+		unityInstance.SendMessage('Main', 'SetDateAndTime', new Date().toLocaleString(locale))
+	}, 1000)
 }

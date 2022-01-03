@@ -837,7 +837,7 @@ MonoBehaviour:
   dateAndTimeText: {fileID: 1894354749}
   getDateAndTimeButton: {fileID: 1733693707}
   getDateAndTimeAsyncButton: {fileID: 660355431}
-  prefix: 'Current time: '
+  locale: en-GB
 --- !u!4 &1680063256
 Transform:
   m_ObjectHideFlags: 0

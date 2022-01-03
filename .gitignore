@@ -13,6 +13,7 @@ Packages/packages-lock.json
 # User settings
 UserSettings/*
 *.userprefs
+*.sln.DotSettings.user
 
 # Visual Studio files
 *.sln
