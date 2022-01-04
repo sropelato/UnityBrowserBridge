@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Opera;
+using OpenQA.Selenium.Safari;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,9 +20,37 @@ namespace UBB
 		#if UNITY_EDITOR
 
 		/// <summary>
+		/// Browser selection.
+		/// </summary>
+		public enum Browser
+		{
+			Chrome,
+			Edge,
+			Firefox,
+			Opera,
+			Safari
+		}
+
+		/// <summary>
 		/// Static singleton property to access UnityBrowserBridge instance. 
 		/// </summary>
 		public static UnityBrowserBridge Instance { get; private set; }
+
+		/// <summary>
+		/// Browser to be used
+		/// </summary>
+		public Browser browser = Browser.Chrome;
+
+		/// <summary>
+		/// Path to directory of the web driver. Leave this empty to search the web driver in a directory on the PATH
+		/// variable. 
+		/// </summary>
+		public string webDriverDirectory = "";
+
+		/// <summary>
+		/// Arguments that are passed along to the web driver. Does not work for Safari.
+		/// </summary>
+		public string[] browserArguments = { };
 
 		/// <summary>
 		/// Port used for the web server.
@@ -110,8 +142,38 @@ namespace UBB
 			foreach (string path in includeExternalFiles)
 				httpServer.AddJSFile(path);
 
-			// open browser
-			webDriver = new ChromeDriver();
+			// initialize web driver
+			switch (browser)
+			{
+				case Browser.Chrome:
+					ChromeOptions chromeOptions = new ChromeOptions();
+					chromeOptions.AddArguments(browserArguments);
+					webDriver = string.IsNullOrEmpty(webDriverDirectory) ? new ChromeDriver(chromeOptions) : new ChromeDriver(webDriverDirectory, chromeOptions);
+					break;
+				case Browser.Edge:
+					EdgeOptions edgeOptions = new EdgeOptions();
+					edgeOptions.AddArguments(browserArguments);
+					webDriver = string.IsNullOrEmpty(webDriverDirectory) ? new EdgeDriver(edgeOptions) : new EdgeDriver(webDriverDirectory, edgeOptions);
+					break;
+				case Browser.Firefox:
+					FirefoxOptions firefoxOptions = new FirefoxOptions();
+					firefoxOptions.AddArguments(browserArguments);
+					webDriver = string.IsNullOrEmpty(webDriverDirectory) ? new FirefoxDriver(firefoxOptions) : new FirefoxDriver(webDriverDirectory, firefoxOptions);
+					break;
+				case Browser.Opera:
+					OperaOptions operaOptions = new OperaOptions();
+					operaOptions.AddArguments(browserArguments);
+					webDriver = string.IsNullOrEmpty(webDriverDirectory) ? new OperaDriver(operaOptions) : new OperaDriver(webDriverDirectory, operaOptions);
+					break;
+				case Browser.Safari:
+					SafariOptions safariOptions = new SafariOptions();
+					if (browserArguments.Length > 0)
+						Debug.LogWarning("Unity Browser Bridge - Safari Web Driver does not allow adding generic arguments. Please configure SafariOptions directly.");
+					webDriver = string.IsNullOrEmpty(webDriverDirectory) ? new SafariDriver(safariOptions) : new SafariDriver(webDriverDirectory, safariOptions);
+					break;
+			}
+
+			// open web interface
 			webDriver.Url = "http://localhost:" + httpServerPort + "/";
 		}
 

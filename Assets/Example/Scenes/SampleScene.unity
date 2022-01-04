@@ -1324,6 +1324,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
+      propertyPath: browser
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
+      propertyPath: webDriverPath
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
+      propertyPath: browserArguments.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
+      propertyPath: browserArguments.Array.data[0]
+      value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
+      propertyPath: browserArguments.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
       propertyPath: includeProjectFiles.Array.size
       value: 1
       objectReference: {fileID: 0}
