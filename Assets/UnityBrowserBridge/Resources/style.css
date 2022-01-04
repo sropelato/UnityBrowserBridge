@@ -39,7 +39,7 @@ body {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    background: url('Logo.png') no-repeat center;
+    background: url('ubb_logo.png') no-repeat center;
     background-size: contain;
 }
 
@@ -211,6 +211,21 @@ body {
 
 .calls_list_entry:hover {
     background: #555555;
+}
+
+.clear_button {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    background: url('delete.png');
+    background-size: cover;
+    background-position: 0 0;
+}
+
+.clear_button:hover {
+    background-position: 0 100%;
 }
 
 .switch {
