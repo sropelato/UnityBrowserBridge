@@ -1,0 +1,12 @@
+{
+  "name": "net.ropelato.unitybrowserbridge",
+  "version": "0.1.0",
+  "displayName": "Unity Browser Bridge",
+  "description": "Web browser integration for testing WebGL projects",
+  "unity": "2019.1",
+  "author": {
+    "name": "Sandro Ropelato",
+    "email": "sandro@ropelato.net",
+    "url": "https://ropelato.net"
+  }
+}
