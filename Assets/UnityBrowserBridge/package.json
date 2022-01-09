@@ -13,7 +13,7 @@
     {
       "displayName": "Unity Browser Bridge Example",
       "description": "Example scene to show the functionality of Unity Browser Bridge",
-      "path": "Samples~/Example"
+      "path": "Samples/Example"
     }
   ]
 }
