@@ -8,5 +8,12 @@
     "name": "Sandro Ropelato",
     "email": "sandro@ropelato.net",
     "url": "https://ropelato.net"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Unity Browser Bridge Example",
+      "description": "Example scene to show the functionality of Unity Browser Bridge",
+      "path": "Samples~/Example"
+    }
+  ]
 }
