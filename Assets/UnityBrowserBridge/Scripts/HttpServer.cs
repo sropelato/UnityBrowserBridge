@@ -127,7 +127,7 @@ namespace UBB
 				indexHtml = indexHtml.Replace("<!-- SCRIPT_LIST -->", scriptList);
 
 				// send response
-				context.Response.StatusCode = (int) HttpStatusCode.OK;
+				context.Response.StatusCode = (int)HttpStatusCode.OK;
 				context.Response.ContentType = "text/html";
 				byte[] responseBytes = Encoding.UTF8.GetBytes(indexHtml);
 				context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -139,7 +139,7 @@ namespace UBB
 				Debug.Log("Unity Browser Bridge - Browser is ready");
 
 				// send response
-				context.Response.StatusCode = (int) HttpStatusCode.OK;
+				context.Response.StatusCode = (int)HttpStatusCode.OK;
 				context.Response.ContentType = "text/plain";
 				byte[] responseBytes = Encoding.UTF8.GetBytes("OK");
 				context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -154,7 +154,7 @@ namespace UBB
 					Debug.LogError("Unity Browser Bridge - gameObject cannot be null.");
 
 					// send response
-					context.Response.StatusCode = (int) HttpStatusCode.BadRequest;
+					context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("gameObject must be set.");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -164,7 +164,7 @@ namespace UBB
 					Debug.LogError("Unity Browser Bridge - methodName cannot be null.");
 
 					// send response
-					context.Response.StatusCode = (int) HttpStatusCode.BadRequest;
+					context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("methodName must be set.");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -176,7 +176,7 @@ namespace UBB
 					UnityBrowserBridge.Instance.SendMessageToGameObject(gameObjectName, methodName, num);
 
 					// send response
-					context.Response.StatusCode = (int) HttpStatusCode.OK;
+					context.Response.StatusCode = (int)HttpStatusCode.OK;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("OK");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -188,7 +188,7 @@ namespace UBB
 					UnityBrowserBridge.Instance.SendMessageToGameObject(gameObjectName, methodName, str);
 
 					// send response
-					context.Response.StatusCode = (int) HttpStatusCode.OK;
+					context.Response.StatusCode = (int)HttpStatusCode.OK;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("OK");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -199,7 +199,7 @@ namespace UBB
 					UnityBrowserBridge.Instance.SendMessageToGameObject(gameObjectName, methodName);
 
 					// send response
-					context.Response.StatusCode = (int) HttpStatusCode.OK;
+					context.Response.StatusCode = (int)HttpStatusCode.OK;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("OK");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -211,7 +211,7 @@ namespace UBB
 				string filename = requestPath.Substring(9);
 				if (jsFiles.ContainsKey(filename) && File.Exists(jsFiles[filename]))
 				{
-					context.Response.StatusCode = (int) HttpStatusCode.OK;
+					context.Response.StatusCode = (int)HttpStatusCode.OK;
 					context.Response.ContentType = "application/javascript";
 					byte[] responseBytes = File.ReadAllBytes(jsFiles[filename]);
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -219,7 +219,7 @@ namespace UBB
 				else
 				{
 					Debug.LogWarning("Unity Browser Bridge - File not found: " + requestPath);
-					context.Response.StatusCode = (int) HttpStatusCode.NotFound;
+					context.Response.StatusCode = (int)HttpStatusCode.NotFound;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("Not found");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);
@@ -236,7 +236,7 @@ namespace UBB
 				if (File.Exists(filename))
 				{
 					// status code 200
-					context.Response.StatusCode = (int) HttpStatusCode.OK;
+					context.Response.StatusCode = (int)HttpStatusCode.OK;
 
 					// set mime type
 					switch (Path.GetExtension(filename).ToLower())
@@ -271,7 +271,7 @@ namespace UBB
 				else
 				{
 					Debug.LogWarning("Unity Browser Bridge - File not found: " + requestPath);
-					context.Response.StatusCode = (int) HttpStatusCode.NotFound;
+					context.Response.StatusCode = (int)HttpStatusCode.NotFound;
 					context.Response.ContentType = "text/plain";
 					byte[] responseBytes = Encoding.UTF8.GetBytes("Not found");
 					context.Response.OutputStream.Write(responseBytes, 0, responseBytes.Length);

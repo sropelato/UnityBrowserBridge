@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
+using UnityEditor;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
-using UnityEditor;
-using UnityEngine;
 
 namespace UBB
 {
@@ -64,14 +64,9 @@ namespace UBB
 		public TextAsset indexFile;
 
 		/// <summary>
-		/// JavaScript files included in the WebGL project (located in the Assets folder).
+		/// Path to JavaScript files included in the WebGL project.
 		/// </summary>
-		public List<DefaultAsset> includeProjectFiles = new List<DefaultAsset>();
-
-		/// <summary>
-		/// Path to JavaScript files included in the WebGL project (located outside of the Assets folder).
-		/// </summary>
-		public List<string> includeExternalFiles = new List<string>();
+		public List<string> includeJavaScriptFiles = new List<string>();
 
 		// HTTP server
 		private HttpServer httpServer = null;
@@ -134,13 +129,15 @@ namespace UBB
 			httpServer = new HttpServer(httpServerPort, Path.GetDirectoryName(AssetDatabase.GetAssetPath(indexFile)));
 			httpServer.Start();
 
-			// add internal files
-			foreach (DefaultAsset asset in includeProjectFiles)
-				httpServer.AddJSFile(AssetDatabase.GetAssetPath(asset));
-
-			// add external files
-			foreach (string path in includeExternalFiles)
-				httpServer.AddJSFile(path);
+			// add javascript files
+			foreach (string jsFile in includeJavaScriptFiles)
+			{
+				// resolve path relative to 'Assets' folder (if file exists)
+				if (File.Exists(Path.Combine(Application.dataPath, jsFile)))
+					httpServer.AddJSFile(Path.Combine(Application.dataPath, jsFile));
+				else
+					httpServer.AddJSFile(jsFile);
+			}
 
 			// initialize web driver
 			switch (browser)
@@ -228,8 +225,8 @@ namespace UBB
 
 			try
 			{
-				((IJavaScriptExecutor) webDriver).ExecuteScript("_ubb_logBrowserCall('" + jsCommand.Replace("'", "&apos;") + "')");
-				((IJavaScriptExecutor) webDriver).ExecuteScript(jsCommand);
+				((IJavaScriptExecutor)webDriver).ExecuteScript("_ubb_logBrowserCall('" + jsCommand.Replace("'", "&apos;") + "')");
+				((IJavaScriptExecutor)webDriver).ExecuteScript(jsCommand);
 			}
 			catch (Exception e)
 			{
@@ -257,8 +254,8 @@ namespace UBB
 			object result;
 			try
 			{
-				((IJavaScriptExecutor) webDriver).ExecuteScript("_ubb_logBrowserCall('" + jsCommand.Replace("'", "&apos;") + "')");
-				result = ((IJavaScriptExecutor) webDriver).ExecuteScript("return " + jsCommand);
+				((IJavaScriptExecutor)webDriver).ExecuteScript("_ubb_logBrowserCall('" + jsCommand.Replace("'", "&apos;") + "')");
+				result = ((IJavaScriptExecutor)webDriver).ExecuteScript("return " + jsCommand);
 			}
 			catch (Exception e)
 			{
@@ -269,7 +266,7 @@ namespace UBB
 			// convert type
 			try
 			{
-				return (T) Convert.ChangeType(result, typeof(T));
+				return (T)Convert.ChangeType(result, typeof(T));
 			}
 			catch (Exception)
 			{

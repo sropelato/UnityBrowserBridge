@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity Browser Bridge Example</title>
+	<link rel="shortcut icon" href="TemplateData/favicon.ico">
+	<link rel="stylesheet" href="TemplateData/style.css">
+	<script src="TemplateData/jquery-3.6.0.min.js"></script>
+	<script src="TemplateData/webgl-util.js"></script>
+	<script src="TemplateData/myscript.js"></script>
+	<script src="Build/{{{ LOADER_FILENAME }}}"></script>
+	<script>
+		// build configuration
+		var buildUrl = "Build"
+		var buildConfig = {
+			dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+			frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+			codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+			streamingAssetsUrl: "StreamingAssets",
+			companyName: "{{{ COMPANY_NAME }}}",
+			productName: "{{{ PRODUCT_NAME }}}",
+			productVersion: "{{{ PRODUCT_VERSION }}}",
+			showBanner: showBanner,
+			devicePixelRatio: 1.0
+		}
+	</script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="canvas_container">
+			<canvas id="canvas" width="120" height="90"></canvas>
+			<div id="loading_bar">
+				<div id="loading_bar_logo"></div>
+				<div id="loading_bar_empty">
+					<div id="loading_bar_full"></div>
+				</div>
+			</div>
+			<div id="banner"></div>
+		</div>
+	</div>
+</body>
+
+</html>
