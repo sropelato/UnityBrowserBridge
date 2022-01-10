@@ -528,7 +528,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 36
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
@@ -664,7 +664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 64, y: 288}
+  m_AnchoredPosition: {x: 64, y: 292}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979398127
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1000, y: 1000}
+  m_ReferenceResolution: {x: 1144, y: 1000}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0.496
   m_PhysicalUnit: 3
@@ -893,7 +893,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 816, y: 816}
+  m_SizeDelta: {x: 960, y: 816}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709289844
 MonoBehaviour:
@@ -1001,17 +1001,18 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1.1
   m_Text: 'This is an example scene to showcase the functionality of Unity Browser
     Bridge.
 
     When compiled into a WebGL project, the two buttons will invoke
-    the getDateAndTime resp. getDateAndTimeAsync functions in myscript.js.
+    the <color=#88BBFF>getDateAndTime</color> resp. <color=#88BBFF>getDateAndTimeAsync</color>
+    functions defined in <color=#88FFBB>WebGLTemplates/UBBExample/TemplateData/myscript.js</color>.
 
     In
-    the Unity editor, those functions can be invoked via Unity Browser Bridge when
-    configured to include the myscript.js file.'
+    the Unity editor, the same functions are executed in a web browser via Unity
+    Browser Bridge.'
 --- !u!222 &1713585618
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 128, y: 288}
+  m_AnchoredPosition: {x: 128, y: 292}
   m_SizeDelta: {x: -160, y: 64}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1894354749
@@ -1329,18 +1330,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
-      propertyPath: browserArguments.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
-      propertyPath: browserArguments.Array.data[0]
-      value: test
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
-      propertyPath: browserArguments.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
       propertyPath: includeProjectFiles.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1362,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1943767788423411988, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
       propertyPath: includeJavaScriptFiles.Array.data[0]
-      value: WebGLTemplates/UBBExampleTemplate/TemplateData/myscript.js
+      value: WebGLTemplates/UBBExample/TemplateData/myscript.js
       objectReference: {fileID: 0}
     - target: {fileID: 1943767788423411989, guid: b2ca0da73d4214f50b14277cc41e4d3c, type: 3}
       propertyPath: m_RootOrder
