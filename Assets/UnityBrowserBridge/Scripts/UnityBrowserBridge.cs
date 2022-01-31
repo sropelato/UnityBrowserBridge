@@ -230,7 +230,7 @@ namespace UBB
 			}
 			catch (Exception e)
 			{
-				Debug.LogError("Unity Browser Bridge - Could not execute command " + jsCommand + ": " + e.Message);
+				Debug.LogError("Unity Browser Bridge - Could not execute command <i>" + jsCommand + "</i>: " + e.Message);
 			}
 		}
 
@@ -259,7 +259,7 @@ namespace UBB
 			}
 			catch (Exception e)
 			{
-				Debug.LogError("Unity Browser Bridge - Could not execute command " + jsCommand + ": " + e.Message);
+				Debug.LogError("Unity Browser Bridge - Could not execute command <i>" + jsCommand + "</i>: " + e.Message);
 				return default;
 			}
 
@@ -270,7 +270,7 @@ namespace UBB
 			}
 			catch (Exception)
 			{
-				Debug.LogError("Unity Browser Bridge - Could not convert return value from " + jsCommand + " to type " + typeof(T));
+				Debug.LogError("Unity Browser Bridge - Could not convert return value from <i>" + jsCommand + "</i> to type " + typeof(T));
 				return default;
 			}
 		}
