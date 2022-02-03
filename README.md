@@ -30,7 +30,7 @@ Here's what you need in order to use Unity Browser Bridge:
 * Unity version 2021.1 or higher
 * Unity project targeting the WebGL platform
 * Web browser and its corresponding [web driver](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers)
-* The Unity Browser Bridge package (see [releases](https://github.com/sropelato))
+* The Unity Browser Bridge package (see [releases](https://github.com/sropelato/UnityBrowserBridge/releases/download/v1.0.0/UnityBrowserBridge_v1.0.0.unitypackage))
 
 #### Import Unity Browser Bridge
 
@@ -96,7 +96,7 @@ With this in place, your project can be run in the Unity editor and compiled int
 
 ## The example project
 
-The example project ([UnityBrowserBridgeExample_v1.0.0.unitypackage](https://github.com/sropelato)) contains a sample with a fully-configured UBB setup. It demonstrates how to invoke JavaScript functions with parameters and return types and how to handle function calls from the browser.
+The example project ([UnityBrowserBridgeExample_v1.0.0.unitypackage](https://github.com/sropelato/UnityBrowserBridge/releases/download/v1.0.0/UnityBrowserBridgeExample_v1.0.0.unitypackage)) contains a sample with a fully-configured UBB setup. It demonstrates how to invoke JavaScript functions with parameters and return types and how to handle function calls from the browser.
 
 _Please note that the example project does not include the Unity Browser Bridge implementation. In order to work, the main package ___UnityBrowserBridge_v1.0.0.unitypackage___ must be imported as well._
 
