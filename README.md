@@ -161,8 +161,18 @@ _Figure 4: Unity Browser Bridge configuration. The web driver executable (here c
 ![Screenshot UBB with example project](Documentation/Figures/ScreenshotExamplePage.png)
 _Figure 5: Unity Browser Bridge status page of the example project with the included myscript.js file. Enabling the live calls shows the browser calls from Unity and the messages sent to Unity._
 
-Of course, the example project can be built as a WebGL project and should show the same behavior like when tested in the Unity editor (Figure 6).
+Of course, the example project can be built as a WebGL project and should show the same behavior like when tested in the Unity editor (Figure 6). Make sure to use the UBBExample WebGL template as it contains the required _myscript.js_ file.
 
 ![Screenshot example project WebGL](Documentation/Figures/ScreenshotExampleWebGL.png)
 _Figure 6: Example project compiled to WebGL._
 
+
+## License
+
+The source code, binaries and all included assets of Unity Browser Bridge are released under the [MIT license](LICENSE).
+
+#### Included software
+
+The Selenium framework (used to interact with the web driver) is licensed under the Apache 2.0 license (License file included in [Assets/UnityBrowserBridge/Plugins/SeleniumLicense.txt](Assets/UnityBrowserBridge/Plugins/SeleniumLicense.txt)).
+
+jQuery (used in the example WebGL template) is licensed under the MIT license (License file included in [Assets/WebGLTemplates/UBBExample/TemplateData/jQueryLicense.txt](Assets/WebGLTemplates/UBBExample/TemplateData/jQueryLicense.txt)).
