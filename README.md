@@ -30,7 +30,7 @@ Here's what you need in order to use Unity Browser Bridge:
 * Unity version 2021.1 or higher
 * Unity project targeting the WebGL platform
 * Web browser and its corresponding [web driver](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers)
-* The Unity Browser Bridge package (see [releases](https://github.com/sropelato/UnityBrowserBridge/releases/download/v1.0.0/UnityBrowserBridge_v1.0.0.unitypackage))
+* The Unity Browser Bridge package ([UnityBrowserBridge_v1.0.0.unitypackage](https://github.com/sropelato/UnityBrowserBridge/releases/download/v1.0.0/UnityBrowserBridge_v1.0.0.unitypackage))
 
 #### Import Unity Browser Bridge
 
