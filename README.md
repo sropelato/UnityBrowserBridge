@@ -9,7 +9,7 @@ Unity Browser Bridge (UBB) allows you to test browser interactions directly from
 
 ## How does it work?
 
-In a WebGL build, browser interaction is implemented by integrating the functions you defined in the _.jslib_ file into the your script code, which eventually gets translated into JavaScript. Similariy, the browser can invoke methods in your code using the SendMessage function on the Unity instance.
+In a WebGL build, browser interaction is implemented by integrating the functions you defined in the _.jslib_ file into the your script code, which eventually gets translated into JavaScript. Similarly, the browser can invoke methods in your code using the SendMessage function on the Unity instance.
 
 Within the Unity editor, there is no direct way of accessing a JavaScript engine present in web browsers. UBB therefore uses [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver) to control a web browser with which your script code interacts.
 
